@@ -1,0 +1,140 @@
+Get the AMI ID from console.
+
+Created key-apit prior in console -
+
+aws ec2 run-instances --image-id 'ami-0521cb2d60cfbb1a6' --instance-type 't2.micro' --key-name 'xfusion-kp' --tag-specifications '{"ResourceType":"instance","Tags":[{"Key":"Name","Value":"xfusion-ec2"}]}' --count '1' 
+
+aws-client ~ ➜  aws ec2 run-instances --image-id 'ami-0521cb2d60cfbb1a6' --instance-type 't2.micro' --key-name 'xfusion-kp' --tag-specifications '{"ResourceType":"instance","Tags":[{"Key":"Name","Value":"xfusion-ec2"}]}' --count '1' 
+{
+    "ReservationId": "r-096d8ecdfdba9b3e4",
+    "OwnerId": "253882248345",
+    "Groups": [],
+    "Instances": [
+        {
+            "Architecture": "x86_64",
+            "BlockDeviceMappings": [],
+            "ClientToken": "6f584657-a875-4990-be70-b093faf401f1",
+            "EbsOptimized": false,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "NetworkInterfaces": [
+                {
+                    "Attachment": {
+                        "AttachTime": "2026-06-18T19:25:10.000Z",
+                        "AttachmentId": "eni-attach-0b098c9ad2e9d65a1",
+                        "DeleteOnTermination": true,
+                        "DeviceIndex": 0,
+                        "Status": "attaching",
+                        "NetworkCardIndex": 0
+                    },
+                    "Description": "",
+                    "Groups": [
+                        {
+                            "GroupId": "sg-0265dde2f4f80f3b7",
+                            "GroupName": "default"
+                        }
+                    ],
+                    "Ipv6Addresses": [],
+                    "MacAddress": "0a:ff:d9:df:d3:67",
+                    "NetworkInterfaceId": "eni-08961c3f1c7ff5d8a",
+                    "OwnerId": "253882248345",
+                    "PrivateDnsName": "ip-172-31-19-230.ec2.internal",
+                    "PrivateIpAddress": "172.31.19.230",
+                    "PrivateIpAddresses": [
+                        {
+                            "Primary": true,
+                            "PrivateDnsName": "ip-172-31-19-230.ec2.internal",
+                            "PrivateIpAddress": "172.31.19.230"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Status": "in-use",
+                    "SubnetId": "subnet-03ca268a8de1c9609",
+                    "VpcId": "vpc-08fbc28e045159c09",
+                    "InterfaceType": "interface",
+                    "Operator": {
+                        "Managed": false
+                    }
+                }
+            ],
+            "RootDeviceName": "/dev/xvda",
+            "RootDeviceType": "ebs",
+            "SecurityGroups": [
+                {
+                    "GroupId": "sg-0265dde2f4f80f3b7",
+                    "GroupName": "default"
+                }
+            ],
+            "SourceDestCheck": true,
+            "StateReason": {
+                "Code": "pending",
+                "Message": "pending"
+            },
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "xfusion-ec2"
+                }
+            ],
+            "VirtualizationType": "hvm",
+            "CpuOptions": {
+                "CoreCount": 1,
+                "ThreadsPerCore": 1
+            },
+            "CapacityReservationSpecification": {
+                "CapacityReservationPreference": "open"
+            },
+            "MetadataOptions": {
+                "State": "pending",
+                "HttpTokens": "required",
+                "HttpPutResponseHopLimit": 2,
+                "HttpEndpoint": "enabled",
+                "HttpProtocolIpv6": "disabled",
+                "InstanceMetadataTags": "disabled"
+            },
+            "EnclaveOptions": {
+                "Enabled": false
+            },
+            "BootMode": "uefi-preferred",
+            "PrivateDnsNameOptions": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "MaintenanceOptions": {
+                "AutoRecovery": "default",
+                "RebootMigration": "default"
+            },
+            "CurrentInstanceBootMode": "legacy-bios",
+            "Operator": {
+                "Managed": false
+            },
+            "InstanceId": "i-004f5905f53cc6ae5",
+            "ImageId": "ami-0521cb2d60cfbb1a6",
+            "State": {
+                "Code": 0,
+                "Name": "pending"
+            },
+            "PrivateDnsName": "ip-172-31-19-230.ec2.internal",
+            "PublicDnsName": "",
+            "StateTransitionReason": "",
+            "KeyName": "xfusion-kp",
+            "AmiLaunchIndex": 0,
+            "ProductCodes": [],
+            "InstanceType": "t2.micro",
+            "LaunchTime": "2026-06-18T19:25:10.000Z",
+            "Placement": {
+                "AvailabilityZoneId": "use1-az4",
+                "GroupName": "",
+                "Tenancy": "default",
+                "AvailabilityZone": "us-east-1c"
+            },
+            "Monitoring": {
+                "State": "disabled"
+            },
+            "SubnetId": "subnet-03ca268a8de1c9609",
+            "VpcId": "vpc-08fbc28e045159c09",
+            "PrivateIpAddress": "172.31.19.230"
+        }
+    ]
+}
