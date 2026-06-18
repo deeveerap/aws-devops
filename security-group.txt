@@ -1,0 +1,40 @@
+Create a security group and add 2 security group inboud rules.
+ - First create security Group
+ - Then create sg-inboud rule 
+
+aws ec2 create-security-group --group-name "devops-sg" --description "Security group for Nautilus App Servers"
+{
+    "GroupId": "sg-050ed0dca068b73c4",
+    "SecurityGroupArn": "arn:aws:ec2:us-east-1:632892413748:security-group/sg-050ed0dca068b73c4"
+}
+
+aws ec2 authorize-security-group-ingress --group-id "sg-050ed0dca068b73c4" --ip-permissions '[{"IpProtocol": "tcp","ToPort": 80,"FromPort": 80,"IpRanges": [{"CidrIp": "0.0.0.0/0", "Description": "Allow HTTP Access"}]},{"IpProtocol": "tcp","ToPort": 22,"FromPort": 22,"IpRanges": [{"CidrIp": "0.0.0.0/0", "Description": "Allow SSH Access"}]}]'
+{
+    "Return": true,
+    "SecurityGroupRules": [
+        {
+            "SecurityGroupRuleId": "sgr-036fddfa84eace639",
+            "GroupId": "sg-050ed0dca068b73c4",
+            "GroupOwnerId": "632892413748",
+            "IsEgress": false,
+            "IpProtocol": "tcp",
+            "FromPort": 80,
+            "ToPort": 80,
+            "CidrIpv4": "0.0.0.0/0",
+            "Description": "Allow HTTP Access",
+            "SecurityGroupRuleArn": "arn:aws:ec2:us-east-1:632892413748:security-group-rule/sgr-036fddfa84eace639"
+        },
+        {
+            "SecurityGroupRuleId": "sgr-047fdf0748f9a9021",
+            "GroupId": "sg-050ed0dca068b73c4",
+            "GroupOwnerId": "632892413748",
+            "IsEgress": false,
+            "IpProtocol": "tcp",
+            "FromPort": 22,
+            "ToPort": 22,
+            "CidrIpv4": "0.0.0.0/0",
+            "Description": "Allow SSH Access",
+            "SecurityGroupRuleArn": "arn:aws:ec2:us-east-1:632892413748:security-group-rule/sgr-047fdf0748f9a9021"
+        }
+    ]
+}
