@@ -1,1 +1,0 @@
-aws ec2 create-volume devops-volume --volumetype=gp3 --size=2GiB --tag-specifications 'ResourceType=volume,Tags=[{Key=Name,Value=devops-volume}]'

@@ -1,0 +1,28 @@
+aws ec2 create-volume devops-volume --volumetype=gp3 --size=2GiB --tag-specifications 'ResourceType=volume,Tags=[{Key=Name,Value=devops-volume}]'
+
+
+Added AZ - its must
+Size - give only number
+
+
+aws ec2 create-volume --availability-zone=us-east-1a --volume-type=gp3 --size=2 --tag-specifications 'ResourceType=volume,Tags=[{Key=Name,Value=devops-volume}]'
+{
+    "AvailabilityZoneId": "use1-az6",
+    "Iops": 3000,
+    "Tags": [
+        {
+            "Key": "Name",
+            "Value": "devops-volume"
+        }
+    ],
+    "VolumeType": "gp3",
+    "MultiAttachEnabled": false,
+    "Throughput": 125,
+    "VolumeId": "vol-0241bf07c73535804",
+    "Size": 2,
+    "SnapshotId": "",
+    "AvailabilityZone": "us-east-1a",
+    "State": "creating",
+    "CreateTime": "2026-06-18T19:13:09.000Z",
+    "Encrypted": false
+}
