@@ -19,3 +19,14 @@ Check Attribute
         "Value": true
     }
 }
+
+
+=-----
+
+aws ec2 describe-instance-attribute --instance-id "i-0dee6a8c3c563e238" --attribute disableApiTermination
+{
+    "DisableApiTermination": {
+        "Value": true
+    },
+    "InstanceId": "i-0dee6a8c3c563e238"
+}
