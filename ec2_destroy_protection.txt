@@ -1,0 +1,9 @@
+Query to list all EC2 instances
+   aws ec2 describe-instances --query "Reservations[].Instances[].Tags[?Key=='Name'] | [0][0].Value" --output text
+
+Get Instance ID
+aws ec2 describe-instances --query 'Reservations[].Instances[].InstanceId'
+aws ec2 describe-instances --query "Reservations[].Instances[].{InstanceId:InstanceId,Name:Tags[?Key=='Name']|[0][0].Value}" --output table
+
+Disable API Termination:
+aws ec2 modify-instance-attribute --instance-id "i-0aebe525d41fe797f" --disable-api-termination
