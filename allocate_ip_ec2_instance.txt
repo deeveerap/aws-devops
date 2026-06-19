@@ -1,0 +1,4 @@
+aws-client ~ ➜  aws ec2 associate-address --instance-id "i-070c2962d9c2e60f2" --allocation-id "eipalloc-03fedc2cb347f5d95"
+{
+    "AssociationId": "eipassoc-09011fff9f17651e0"
+}
