@@ -1,0 +1,5 @@
+aws ec2 attach-network-interface --network-interface-id eni-0e6ea4aeb8b403932 --instance-id i-0ed87f6a02530de57 --device-index 1
+{
+    "AttachmentId": "eni-attach-04c985cebc7b55a04",
+    "NetworkCardIndex": 0
+}
