@@ -7,3 +7,15 @@ aws ec2 describe-instances --query "Reservations[].Instances[].{InstanceId:Insta
 
 Disable API Termination:
 aws ec2 modify-instance-attribute --instance-id "i-0aebe525d41fe797f" --disable-api-termination
+
+Disable Stop 
+aws ec2 modify-instance-attribute --instance-id "i-0aebe525d41fe797f" --disable-api-stop
+
+Check Attribute
+ aws ec2 describe-instance-attribute --instance-id "i-0aebe525d41fe797f" --attribute disableApiStop
+{
+    "InstanceId": "i-0aebe525d41fe797f",
+    "DisableApiStop": {
+        "Value": true
+    }
+}
