@@ -1,0 +1,8 @@
+aws ec2 attach-volume --volume-id vol-0664deaa0a67e3529 --instance-id i-0cd7fa51bb12c25e6 --device /dev/sdb
+{
+    "VolumeId": "vol-0664deaa0a67e3529",
+    "InstanceId": "i-0cd7fa51bb12c25e6",
+    "Device": "/dev/sdb",
+    "State": "attaching",
+    "AttachTime": "2026-06-19T19:56:41.788Z"
+}
