@@ -20,7 +20,7 @@ aws ec2 create-snapshot --volume-id vol-0d40418f369466030 --tag-specifications '
 
 aws ec2 create-snapshot --volume-id vol-0d40418f369466030 --tag-specifications 'ResourceType=snapshot,Tags=[{Key=Name,Value=devops-vol-ss}]'
 
-aws ec2 create-snapshot --volume-id vol-0d40418f369466030 --tag-specifications 'ResourceType=snapshot,Tags=[{Key=Name,Value=devops-vol-ss}]'
+aws ec2 create-snapshot --volume-id vol-01dc9ddf37c221931 --description "devops Snapshot" --tag-specifications 'ResourceType=snapshot,Tags=[{Key=Name,Value=devops-vol-ss}]'
 
 {
     "Tags": [
