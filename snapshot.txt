@@ -1,0 +1,41 @@
+aws ec2 create-snapshot --volume-id vol-0d40418f369466030 --tag-specifications 'ResourceType=snapshot,Tags=[{Key=Name,Value=devops-vol-ss}]'
+
+{
+    "Tags": [
+        {
+            "Key": "Name",
+            "Value": "devops-vol-ss"
+        }
+    ],
+    "SnapshotId": "snap-0ae99a753c1da5173",
+    "VolumeId": "vol-0d40418f369466030",
+    "State": "pending",
+    "StartTime": "2026-06-20T11:49:28.944Z",
+    "Progress": "",
+    "OwnerId": "435388912352",
+    "Description": "",
+    "VolumeSize": 5,
+    "Encrypted": false
+}
+
+aws ec2 create-snapshot --volume-id vol-0d40418f369466030 --tag-specifications 'ResourceType=snapshot,Tags=[{Key=Name,Value=devops-vol-ss}]'
+
+aws ec2 create-snapshot --volume-id vol-0d40418f369466030 --tag-specifications 'ResourceType=snapshot,Tags=[{Key=Name,Value=devops-vol-ss}]'
+
+{
+    "Tags": [
+        {
+            "Key": "Name",
+            "Value": "devops-vol-ss"
+        }
+    ],
+    "SnapshotId": "snap-0ae99a753c1da5173",
+    "VolumeId": "vol-0d40418f369466030",
+    "State": "pending",
+    "StartTime": "2026-06-20T11:49:28.944Z",
+    "Progress": "",
+    "OwnerId": "435388912352",
+    "Description": "",
+    "VolumeSize": 5,
+    "Encrypted": false
+}
