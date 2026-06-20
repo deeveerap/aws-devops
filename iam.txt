@@ -1,0 +1,26 @@
+*** Create User
+aws iam create-user --user-name iamuser_jim
+{
+    "User": {
+        "Path": "/",
+        "UserName": "iamuser_jim",
+        "UserId": "AIDA4LEMSYZFRI5J6TXHI",
+        "Arn": "arn:aws:iam::848550872651:user/iamuser_jim",
+        "CreateDate": "2026-06-20T13:02:16Z"
+    }
+}
+
+***
+aws-client ~ ➜  aws iam create-group --group-name iamgroup_yousuf
+{
+    "Group": {
+        "Path": "/",
+        "GroupName": "iamgroup_yousuf",
+        "GroupId": "AGPA5KKBENR5Z3TBNJOSG",
+        "Arn": "arn:aws:iam::915501509755:group/iamgroup_yousuf",
+        "CreateDate": "2026-06-20T13:05:00Z"
+    }
+}
+
+**** CREATE POLICY
+
