@@ -22,5 +22,25 @@ aws-client ~ ➜  aws iam create-group --group-name iamgroup_yousuf
     }
 }
 
-**** CREATE POLICY
+**** Attach policies
+
+ aws iam list-policies --query "Policies[?PolicyName=='iampolicy_ammar']"
+[
+    {
+        "PolicyName": "iampolicy_ammar",
+        "PolicyId": "ANPATUVKLVU62BDJYBC6D",
+        "Arn": "arn:aws:iam::250539126077:policy/iampolicy_ammar",
+        "Path": "/",
+        "DefaultVersionId": "v1",
+        "AttachmentCount": 0,
+        "PermissionsBoundaryUsageCount": 0,
+        "IsAttachable": true,
+        "CreateDate": "2026-06-20T13:18:03Z",
+        "UpdateDate": "2026-06-20T13:18:03Z"
+    }
+]
+
+aws iam attach-user-policy --policy-arn arn:aws:iam::250539126077:policy/iampolicy_ammar --user-name iamuser_ammar
+
+
 
