@@ -1,0 +1,12 @@
+    1  aws s3 mb s3://nautilus-sync-20595
+    2  aws s3 ls
+    3  aws s3 ls nautilus-s3-19938
+    4  aws s3 mv help
+    5  aws s3 mv s3://nautilus-s3-19938 s3://nautilus-sync-20595 --recursive
+    6  aws s3 ls nautilus-s3-19938
+    7  aws s3 ls nautilus-s3-20595
+    8  aws s3 ls nautilus-s3-20595
+    9  aws s3 ls
+   10  aws s3 ls nautilus-sync-20595
+   11  aws s3 ls nautilus-sync-20595 --recursive 
+   12  aws s3 ls nautilus-sync-20595 --recursive  | wc -l
