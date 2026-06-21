@@ -1,0 +1,134 @@
+aws-client ~ ✖ aws ec2 run-instances --image-id 'ami-0521cb2d60cfbb1a6' --instance-type 't2.micro' --tag-specifications '{"ResourceType":"instance","Tags":[{"Key":"Name","Value":"devops-ec2"}]}' --count '1' 
+{
+    "ReservationId": "r-0d5aca60bc042a4d1",
+    "OwnerId": "266796635032",
+    "Groups": [],
+    "Instances": [
+        {
+            "Architecture": "x86_64",
+            "BlockDeviceMappings": [],
+            "ClientToken": "59a5ca55-2df1-4c8b-91b7-b7e06b75193b",
+            "EbsOptimized": false,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "NetworkInterfaces": [
+                {
+                    "Attachment": {
+                        "AttachTime": "2026-06-21T03:49:11.000Z",
+                        "AttachmentId": "eni-attach-0f04273bee97f3f60",
+                        "DeleteOnTermination": true,
+                        "DeviceIndex": 0,
+                        "Status": "attaching",
+                        "NetworkCardIndex": 0
+                    },
+                    "Description": "",
+                    "Groups": [
+                        {
+                            "GroupId": "sg-00ed516a808dbd68d",
+                            "GroupName": "default"
+                        }
+                    ],
+                    "Ipv6Addresses": [],
+                    "MacAddress": "0a:ff:e6:c3:14:8b",
+                    "NetworkInterfaceId": "eni-0262a37153d4e017e",
+                    "OwnerId": "266796635032",
+                    "PrivateDnsName": "ip-172-31-17-117.ec2.internal",
+                    "PrivateIpAddress": "172.31.17.117",
+                    "PrivateIpAddresses": [
+                        {
+                            "Primary": true,
+                            "PrivateDnsName": "ip-172-31-17-117.ec2.internal",
+                            "PrivateIpAddress": "172.31.17.117"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Status": "in-use",
+                    "SubnetId": "subnet-008713bdb4b2b0ef3",
+                    "VpcId": "vpc-031c553ef3a24b74d",
+                    "InterfaceType": "interface",
+                    "Operator": {
+                        "Managed": false
+                    }
+                }
+            ],
+            "RootDeviceName": "/dev/xvda",
+            "RootDeviceType": "ebs",
+            "SecurityGroups": [
+                {
+                    "GroupId": "sg-00ed516a808dbd68d",
+                    "GroupName": "default"
+                }
+            ],
+            "SourceDestCheck": true,
+            "StateReason": {
+                "Code": "pending",
+                "Message": "pending"
+            },
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "devops-ec2"
+                }
+            ],
+            "VirtualizationType": "hvm",
+            "CpuOptions": {
+                "CoreCount": 1,
+                "ThreadsPerCore": 1
+            },
+            "CapacityReservationSpecification": {
+                "CapacityReservationPreference": "open"
+            },
+            "MetadataOptions": {
+                "State": "pending",
+                "HttpTokens": "required",
+                "HttpPutResponseHopLimit": 2,
+                "HttpEndpoint": "enabled",
+                "HttpProtocolIpv6": "disabled",
+                "InstanceMetadataTags": "disabled"
+            },
+            "EnclaveOptions": {
+                "Enabled": false
+            },
+            "BootMode": "uefi-preferred",
+            "PrivateDnsNameOptions": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "MaintenanceOptions": {
+                "AutoRecovery": "default",
+                "RebootMigration": "default"
+            },
+            "CurrentInstanceBootMode": "legacy-bios",
+            "Operator": {
+                "Managed": false
+            },
+            "InstanceId": "i-0090b52697c3e3149",
+            "ImageId": "ami-0521cb2d60cfbb1a6",
+            "State": {
+                "Code": 0,
+                "Name": "pending"
+            },
+            "PrivateDnsName": "ip-172-31-17-117.ec2.internal",
+            "PublicDnsName": "",
+            "StateTransitionReason": "",
+            "AmiLaunchIndex": 0,
+            "ProductCodes": [],
+            "InstanceType": "t2.micro",
+            "LaunchTime": "2026-06-21T03:49:11.000Z",
+            "Placement": {
+                "AvailabilityZoneId": "use1-az4",
+                "GroupName": "",
+                "Tenancy": "default",
+                "AvailabilityZone": "us-east-1d"
+            },
+            "Monitoring": {
+                "State": "disabled"
+            },
+            "SubnetId": "subnet-008713bdb4b2b0ef3",
+            "VpcId": "vpc-031c553ef3a24b74d",
+            "PrivateIpAddress": "172.31.17.117"
+        }
+    ]
+}
+
