@@ -10,3 +10,8 @@
    10  aws s3 ls nautilus-sync-20595
    11  aws s3 ls nautilus-sync-20595 --recursive 
    12  aws s3 ls nautilus-sync-20595 --recursive  | wc -l
+
+
+
+***migrate data
+aws-client ~ ➜  aws s3 sync s3://nautilus-s3-25305 s3://nautilus-sync-22187
