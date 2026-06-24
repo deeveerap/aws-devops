@@ -1,0 +1,8 @@
+ aws rds create-db-snapshot --db-instance-identifier xfusion-rds --db-snapshot-identifier xfusion-snapshot
+ aws rds describe-db-instances
+ aws rds describe-db-instances --query "DBInstances[*].DBInstanceStatus"
+ aws rds create-db-snapshot --db-instance-identifier xfusion-rds --db-snapshot-identifier xfusion-snapshot
+ aws rds describe-db-snapshots --query "DBSnapshots[*].Status"
+ aws rds describe-db-snapshots --db-snapshot-identifier xfusion-snapshot --query "DBSnapshots[*].Status"
+ aws rds describe-db-instances --db-instance-identifier xfusion-snapshot-restore
+ aws rds describe-db-instances --db-instance-identifier xfusion-snapshot-restore --query "DBInstances[*].DBInstanceStatus"
