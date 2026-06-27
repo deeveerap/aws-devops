@@ -1,0 +1,90 @@
+aws-client ~ ✖ aws s3api create-bucket --bucket devops-s3-817245277773 --acl private
+{
+    "Location": "/devops-s3-817245277773",
+    "BucketArn": "arn:aws:s3:::devops-s3-817245277773"
+}
+
+aws-client ~ ➜  vi test.json
+                      
+aws-client ~ ➜  aws iam create-policy --policy-name devops-bucket-policy --policy-document file://test.json
+{
+    "Policy": {
+        "PolicyName": "devops-bucket-policy",
+        "PolicyId": "ANPA34R45JZG5QXZAZ7YN",
+        "Arn": "arn:aws:iam::817245277773:policy/devops-bucket-policy",
+        "Path": "/",
+        "DefaultVersionId": "v1",
+        "AttachmentCount": 0,
+        "PermissionsBoundaryUsageCount": 0,
+        "IsAttachable": true,
+        "CreateDate": "2026-06-26T17:26:04Z",
+        "UpdateDate": "2026-06-26T17:26:04Z"
+    }
+}
+
+aws-client ~ ➜  vi role-policy.json 
+aws-client ~ ➜  aws  iam create-role --role-name devops-role --assume-role-policy-document file://role-policy.json
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "devops-role",
+        "RoleId": "AROA34R45JZGRGL5H2ZUG",
+        "Arn": "arn:aws:iam::817245277773:role/devops-role",
+        "CreateDate": "2026-06-26T17:30:47Z",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "ec2.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        }
+    }
+}
+
+aws-client ~ ➜  aws iam attach-role-policy --role-name devops-role --policy-arn arn:aws:iam::817245277773:policy/devops-bucket-policy
+
+aws-client ~ ➜  aws iam list-attached-role-policies --role-name devops-role
+{
+    "AttachedPolicies": [
+        {
+            "PolicyName": "devops-bucket-policy",
+            "PolicyArn": "arn:aws:iam::817245277773:policy/devops-bucket-policy"
+        }
+    ]
+}
+
+
+aws-client ~ ➜  aws iam create-instance-profile --instance-profile-name devops-profile
+{
+    "InstanceProfile": {
+        "Path": "/",
+        "InstanceProfileName": "devops-profile",
+        "InstanceProfileId": "AIPA34R45JZG6OMWZ45PR",
+        "Arn": "arn:aws:iam::817245277773:instance-profile/devops-profile",
+        "CreateDate": "2026-06-26T17:36:01Z",
+        "Roles": []
+    }
+}
+
+aws-client ~ ➜  aws iam add-role-to-instance-profile \
+    --instance-profile-name devops-profile \
+    --role-name devops-role
+aws-client ~ ➜  aws ec2 associate-iam-instance-profile \
+    --instance-id i-01f589ba8b23b597c \
+    --iam-instance-profile Name=devops-profile
+{
+    "IamInstanceProfileAssociation": {
+        "AssociationId": "iip-assoc-02aaba0b9cf8277a1",
+        "InstanceId": "i-01f589ba8b23b597c",
+        "IamInstanceProfile": {
+            "Arn": "arn:aws:iam::817245277773:instance-profile/devops-profile",
+            "Id": "AIPA34R45JZG6OMWZ45PR"
+        },
+        "State": "associating"
+    }
+}
