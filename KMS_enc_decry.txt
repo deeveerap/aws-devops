@@ -1,0 +1,4 @@
+aws kms create-key --description "Key for Nautilus DevOps data security
+aws kms create-alias --alias-name "alias/nautilus-KMS-Key" --target-key-id d577c922-7d6d-42bc-9353-a9e5ff0c3ae4
+aws kms encrypt     --key-id alias/nautilus-KMS-Key     --plaintext fileb:///root/SensitiveData.txt     --query CiphertextBlob     --output text > /root/EncryptedData.bin
+aws kms decrypt     --ciphertext-blob fileb://<(base64 --decode /root/EncryptedData.bin)     --query Plaintext     --output text | base64 --decode > /root/DecryptedData.txt
